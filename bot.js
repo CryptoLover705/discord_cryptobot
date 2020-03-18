@@ -256,7 +256,7 @@ class SharedData {
 				}
 				case "fiberchange": {
 					exdata.link = `https://fiberchange.com/market/${coin_up[0]}/${coin_up[1]}`;
-					js_request(`https://fiberchange.com/api/v1/${coin_lw[0]}_${coin_lw[1]}/ticker`, res => exdata.fillj(res.ticker, "last", "vol", "buy", "sell", "")); // change not supported
+					js_request(`https://fiberchange.com/api/v1/public/getmarketsummary?market=${coin_lw[0]}_${coin_lw[1]}`, res => exdata.fillj(res.ticker, "last", "vol", "buy", "sell", "")); // change not supported
 					break;
 				}
 				case "finexbox": {
